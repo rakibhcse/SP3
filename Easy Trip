@@ -1,0 +1,89 @@
+class EasyTrip:
+    def __init__(self):
+        self.hotels = {}
+        self.flights = {}
+        self.buses = {}
+        self.trains = {}
+        self.users = {}
+
+    def sign_up_with_mobile(self, mobile_number, name, email=None):
+        user_id = len(self.users) + 1
+        self.users[user_id] = {'name': name, 'mobile_number': mobile_number, 'email': email}
+        return user_id
+
+    def sign_up_with_google(self, google_id, name, email):
+        user_id = len(self.users) + 1
+        self.users[user_id] = {'name': name, 'google_id': google_id, 'email': email}
+        return user_id
+
+    def book_hotel(self, user_id, hotel_name, check_in_date, check_out_date, num_guests):
+        # Implement hotel booking logic
+        pass
+
+    def book_flight(self, user_id, departure_city, destination_city, departure_date, return_date, num_passengers):
+        # Implement flight booking logic
+        pass
+
+    def book_bus(self, user_id, source_city, destination_city, departure_date, num_passengers):
+        # Implement bus booking logic
+        pass
+
+    def book_train(self, user_id, departure_station, destination_station, departure_date, num_passengers):
+        # Implement train booking logic
+        pass
+
+def main():
+    app = EasyTrip()
+    print("Welcome to EasyTrip!")
+    
+    while True:
+        print("\nSelect an option:")
+        print("1. Sign up with mobile number")
+        print("2. Sign up with Google account")
+        print("3. Book hotel")
+        print("4. Book flight")
+        print("5. Book bus")
+        print("6. Book train")
+        print("7. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            mobile_number = input("Enter your mobile number: ")
+            name = input("Enter your name: ")
+            email = input("Enter your email (optional): ")
+            user_id = app.sign_up_with_mobile(mobile_number, name, email)
+            print(f"Signed up successfully! Your user ID is: {user_id}")
+        
+        elif choice == "2":
+            google_id = input("Enter your Google ID: ")
+            name = input("Enter your name: ")
+            email = input("Enter your email: ")
+            user_id = app.sign_up_with_google(google_id, name, email)
+            print(f"Signed up successfully! Your user ID is: {user_id}")
+
+        elif choice == "3":
+            # Implement booking hotel
+            pass
+
+        elif choice == "4":
+            # Implement booking flight
+            pass
+
+        elif choice == "5":
+            # Implement booking bus
+            pass
+
+        elif choice == "6":
+            # Implement booking train
+            pass
+
+        elif choice == "7":
+            print("Thank you for using EasyTrip. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please select a valid option.")
+
+if __name__ == "__main__":
+    main()
